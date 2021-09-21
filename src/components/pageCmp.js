@@ -31,7 +31,7 @@ const PageCmp = ({hasSidebar, pageTitle, sideChil, children}) => {
 
                     <footer class="footer">
                         <div class="content has-text-centered">
-                            Hey
+                            Further footer
                         </div>
                     </footer>
                 </div>

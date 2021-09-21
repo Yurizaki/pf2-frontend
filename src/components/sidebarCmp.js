@@ -17,8 +17,21 @@ const blogProps = {
 	text: "Blog"
 }
 
+const github = {
+	url: "https://github.com/Yurizaki",
+	text: "Github"
+}
+
+const linkedin = {
+	url: "https://www.linkedin.com/in/alex-holmes-296435128",
+	text: "LinkedIn"
+}
+
+
 const SidebarCmp = ({ pageTitle, children }) => {
 	var propsList = [homeProps, aboutProps, blogProps];
+	var contactList = [github, linkedin];
+
 	console.log(propsList)
 
 	propsList.forEach(e => {
@@ -30,7 +43,14 @@ const SidebarCmp = ({ pageTitle, children }) => {
 			<div className="rows">
 				<div className="row">
 					<div className="section has-background-success">
-						{children}
+						<section class="hero">
+							<p class="title has-text-right">
+								Title
+							</p>
+							<figure class="image is-fullwidth">
+								<img src="https://bulma.io/images/placeholders/256x256.png"/>
+							</figure>
+						</section>
 					</div>
 				</div>
 				<div className = "row">
@@ -40,11 +60,10 @@ const SidebarCmp = ({ pageTitle, children }) => {
 								{
 									propsList.map((tag) => (
 										<>
-											{ (
+											{(
 												<li>
-												{console.log("gekki")}
-												<Link to={tag.url}>{tag.text}</Link>
-											</li>
+													<Link to={tag.url}>{tag.text}</Link>
+												</li>
 											)}
 										</>
 									))
@@ -55,11 +74,20 @@ const SidebarCmp = ({ pageTitle, children }) => {
 				</div>
 			</div>
 			<footer class="footer">
-				<div class="content has-text-centered">
+				<div class="section has-text-right">
+					<p>Contact details & links</p>
 					<ul>
-						<li>
-							HELO
-						</li>
+						{
+							contactList.map((tag) => (
+								<>
+									{(
+										<li>
+											<Link to={tag.url}>{tag.text}</Link>
+										</li>
+									)}
+								</>
+							))
+						}
 					</ul>
 				</div>
 			</footer>
