@@ -50,6 +50,9 @@ const SidebarCmp = ({ pageTitle, children }) => {
 							<figure class="image is-fullwidth">
 								<img src="https://bulma.io/images/placeholders/256x256.png"/>
 							</figure>
+							<p class="subtitle has-text-right mt-1">
+								Title
+							</p>
 						</section>
 					</div>
 				</div>

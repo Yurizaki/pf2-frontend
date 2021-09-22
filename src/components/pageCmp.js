@@ -1,10 +1,14 @@
 import * as React from "react";
-import FooterCmp from "./footerCmp";
+import BurgerBar from "./burgerbarCmp";
 import SidebarCmp from "./sidebarCmp";
 
 const PageCmp = ({hasSidebar, pageTitle, sideChil, children}) => {
     return (
         <div className="container is-fluid pl-0 pr-0">
+            <div className="row is-hidden-tablet">
+                <BurgerBar>
+                </BurgerBar>
+            </div>
             <div className="columns">
 
                 {hasSidebar == true &&

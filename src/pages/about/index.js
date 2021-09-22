@@ -1,24 +1,11 @@
 import * as React from "react";
-import SidebarCmp from "../../components/sidebarCmp";
+import PageCmp from "../../components/pageCmp";
 
-import "./about.scss"
-
+const sideChil = (<>About side here</>)
 export default function AboutPage ()  {
 	return (
-		<main className="container">
-			<title>About</title>
-			<div className="columns">
-				<div className="column">
-					<SidebarCmp pageTitle="ALEX" secProp="BLAH">
-						<p>HELOW</p>
-					</SidebarCmp>
-				</div>
-				<div className="column">
-					<h1>
-						HELLOW WORLD
-					</h1>
-				</div>
-			</div>
-		</main>
+		<PageCmp hasSidebar={true} pageTitle="About" sideChil={sideChil}>
+            ABOUT PAGE
+        </PageCmp>
 	);
 };

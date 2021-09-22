@@ -1,0 +1,13 @@
+@import "~bulma/bulma.sass";
+
+
+element.style {
+    /* overflow: hidden; */
+    /* overflow-y: hidden; */
+    /* overflow-x: hidden; */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+    display: none;
+}
