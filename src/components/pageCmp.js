@@ -40,8 +40,7 @@ const PageCmp = ({hasSidebar, pageTitle, sideChil, children}) => {
                     </footer>
                 </div>
             </div>
-
-         </div>
+        </div>
     )
 }
 

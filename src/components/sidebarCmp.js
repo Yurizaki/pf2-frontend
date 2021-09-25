@@ -1,36 +1,11 @@
 import * as React from "react";
 import { Link } from "gatsby";
+import Constants from "../utils/constants";
 
-const homeProps = {
-	url: "/",
-	text: "Home"
-}
-
-
-const aboutProps = {
-	url: "/about",
-	text: "About Me"
-}
-
-const blogProps = {
-	url: "/blog",
-	text: "Blog"
-}
-
-const github = {
-	url: "https://github.com/Yurizaki",
-	text: "Github"
-}
-
-const linkedin = {
-	url: "https://www.linkedin.com/in/alex-holmes-296435128",
-	text: "LinkedIn"
-}
-
-
+const constants = new Constants();
 const SidebarCmp = ({ pageTitle, children }) => {
-	var propsList = [homeProps, aboutProps, blogProps];
-	var contactList = [github, linkedin];
+	let propsList =  constants.getPropsList()
+	let contactList = constants.getExternalList();
 
 	console.log(propsList)
 
