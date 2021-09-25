@@ -23,45 +23,53 @@ class BurgerBar extends React.Component {
 	};
 
 	render() {
-        let propsList =  constants.getPropsList()
-        let contactList = constants.getExternalList();
+		let propsList = constants.getPropsList();
+		let contactList = constants.getExternalList();
 
 		return (
-			<nav class="navbar" role="navigation" aria-label="main navigation">
-				<div class="navbar-brand">
-					<a class="navbar-item" href="https://bulma.io"></a>
-
-					<a
-						role="button"
-						class={this.state.burgerIcon}
-						aria-label="menu"
-						aria-expanded="false"
-						data-target="navbarBasicExample"
-						onClick={this.toggleBurger}
+			<div className="columns">
+				<div className="column pr-0">
+					<nav
+						class="navbar"
+						role="navigation"
+						aria-label="main navigation"
 					>
-						<span aria-hidden="true"></span>
-						<span aria-hidden="true"></span>
-						<span aria-hidden="true"></span>
-					</a>
+						<div class="navbar-brand">
+							<a class="navbar-item" href="https://bulma.io"></a>
+
+							<a
+								role="button"
+								class={this.state.burgerIcon}
+								aria-label="menu"
+								aria-expanded="false"
+								data-target="navbarBasicExample"
+								onClick={this.toggleBurger}
+							>
+								<span aria-hidden="true"></span>
+								<span aria-hidden="true"></span>
+								<span aria-hidden="true"></span>
+							</a>
+						</div>
+						<div id="navbarBasicExample" class={this.state.navMenu}>
+							<div className="navbar-start">
+								<ul>
+									{propsList.map((tag) => (
+										<>
+											{
+												<li className="navbar-item">
+													<Link to={tag.url}>
+														{tag.text}
+													</Link>
+												</li>
+											}
+										</>
+									))}
+								</ul>
+							</div>
+						</div>
+					</nav>
 				</div>
-				<div id="navbarBasicExample" class={this.state.navMenu}>
-					<div className="navbar-start">
-                        <ul>
-                            {
-                                propsList.map((tag) => (
-                                    <>
-                                        {(
-                                            <li className="navbar-item">
-                                                <Link to={tag.url}>{tag.text}</Link>
-                                            </li>
-                                        )}
-                                    </>
-                                ))
-                            }
-                        </ul>
-					</div>
-				</div>
-			</nav>
+			</div>
 		);
 	}
 }
