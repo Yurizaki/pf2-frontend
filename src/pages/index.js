@@ -6,7 +6,7 @@ const sideChil = (<>side bar child her</>)
 
 export default function index() {
 
-    	fetch("/api/cms")
+    	fetch(document.location.href+"/api/cms")
 		.then((res) => res.json())
 		.then((result) => {
 			console.log(result)
