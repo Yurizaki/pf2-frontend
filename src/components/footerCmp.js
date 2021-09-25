@@ -1,18 +1,35 @@
 import * as React from "react";
 
-const FooterCmp = () => {
+class FooterCmp extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+            latestCommit: ""
+        }
 
-	return (
-		<footer class="footer">
-            <div class="content has-text-centered">
-                <p>
-                <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-                is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-                </p>
-            </div>
-        </footer>
-	);
-};
+        // fetch("/api/git-commit")
+        // .then(res => res.json())
+        // .then(result => {
+        //     console.log(result)
+        //     this.setState({
+        //         latestCommit: result.latestCommit
+        //     })
+        // })
+    }
+
+    render() {
+        return (
+            <footer class="footer has-background-danger">
+                <div class="content has-text-centered">
+                    <p>
+                        {this.state.latestCommit}
+                    </p>
+                </div>
+            </footer>
+        );
+    }
+}
 
 export default FooterCmp;
+
+

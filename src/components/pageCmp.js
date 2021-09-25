@@ -1,5 +1,6 @@
 import * as React from "react";
 import BurgerBar from "./burgerbarCmp";
+import FooterCmp from "./footerCmp";
 import SidebarCmp from "./sidebarCmp";
 
 const PageCmp = ({ hasSidebar, pageTitle, sideChil, children }) => {
@@ -11,7 +12,7 @@ const PageCmp = ({ hasSidebar, pageTitle, sideChil, children }) => {
 				</div>
 				<div className="row ">
 					<div className="columns">
-						{hasSidebar == true && (
+						{hasSidebar === true && (
 							<div
 								className="column
 									is-2-widescreen
@@ -35,11 +36,7 @@ const PageCmp = ({ hasSidebar, pageTitle, sideChil, children }) => {
 					</div>
 				</div>
 				<div className="row ">
-					<footer class="footer has-background-danger">
-						<div class="content has-text-centered">
-							Further footer
-						</div>
-					</footer>
+					<FooterCmp></FooterCmp>
 				</div>
 			</div>
 		</div>

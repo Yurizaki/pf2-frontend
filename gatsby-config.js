@@ -1,3 +1,14 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+const contentfulConfig = {
+  spaceId: process.env.GATSBY_CONTENTFUL_SPACE_ID || process.env.CONTENTFUL_SPACE_ID,
+  accessToken: process.env.GATSBY_CONTENTFUL_ACCESS_TOKEN || process.env.CONTENTFUL_ACCESS_TOKEN,
+};
+
+const { spaceId, accessToken } = contentfulConfig;
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
@@ -23,6 +34,13 @@ module.exports = {
         path: "./src/images/",
       },
       __key: "images",
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: spaceId,
+        accessToken: accessToken,
+      },
     },
   ],
 };

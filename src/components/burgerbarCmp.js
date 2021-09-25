@@ -17,14 +17,15 @@ class BurgerBar extends React.Component {
 	toggleBurger = () => {
 		this.setState({
 			active: !this.state.active,
-			navMenu: "navbar-menu" + " " + this.setBurg(),
-			burgerIcon: "navbar-burger" + " " + this.setBurg(),
+			navMenu: "navbar-menu " + this.setBurg(),
+			burgerIcon: "navbar-burger " + this.setBurg(),
 		});
+
 	};
 
 	render() {
 		let propsList = constants.getPropsList();
-		let contactList = constants.getExternalList();
+		// let contactList = constants.getExternalList();
 
 		return (
 			<div className="columns">
@@ -35,9 +36,7 @@ class BurgerBar extends React.Component {
 						aria-label="main navigation"
 					>
 						<div class="navbar-brand">
-							<a class="navbar-item" href="https://bulma.io"></a>
-
-							<a
+							<span
 								role="button"
 								class={this.state.burgerIcon}
 								aria-label="menu"
@@ -48,7 +47,7 @@ class BurgerBar extends React.Component {
 								<span aria-hidden="true"></span>
 								<span aria-hidden="true"></span>
 								<span aria-hidden="true"></span>
-							</a>
+							</span>
 						</div>
 						<div id="navbarBasicExample" class={this.state.navMenu}>
 							<div className="navbar-start">
