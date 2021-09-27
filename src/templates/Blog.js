@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-
+import "./../pages/index.scss";
 import PageCmp from "../components/pageCmp";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
