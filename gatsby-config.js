@@ -9,6 +9,11 @@ const contentfulConfig = {
 
 const { spaceId, accessToken } = contentfulConfig;
 
+
+
+
+
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
