@@ -8,8 +8,8 @@ import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 const sideChil = (<>side bar child her</>)
 
 class Index extends React.Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
 
         this.state = {
             result: ""
@@ -29,7 +29,8 @@ class Index extends React.Component {
             accessToken: contentfulConfig.accessToken
           });
 
-          client
+          if (client) {
+            client
             .getEntry("4a11vMhRrFA5Vzon1TeMeY")
             .then(entry => {
                 console.log("entry")
@@ -46,8 +47,7 @@ class Index extends React.Component {
             .catch(err => {
                 console.log(err)
             });
-
-
+          }
     }
 
     render() {
