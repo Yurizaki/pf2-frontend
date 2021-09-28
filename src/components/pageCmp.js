@@ -34,7 +34,9 @@ const PageCmp = ({ hasSidebar, pageTitle, sideChil, children }) => {
 							</div>
 						)}
 						<div className="column  pl-0 pr-0 has-background-warning">
-							<div className="section">{children}</div>
+							<div className="section">
+								{children}
+							</div>
 						</div>
 					</div>
 				</div>

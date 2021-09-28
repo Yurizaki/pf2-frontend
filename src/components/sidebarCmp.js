@@ -13,7 +13,6 @@ const SidebarCmp = ({ pageTitle, children }) => {
 		console.log(e.url)
 	})
 
-
 	return (
 		<div>
 			<div className="rows ">
