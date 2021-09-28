@@ -22,7 +22,7 @@ module.exports = {
 		defaultDescription:
 			"Home page of Alex Holmes, Engineer and cyber security enthusiast",
 		image: "/static/favicon.png",
-		defaultImage: "/static/favicon.png"
+		defaultImage: "/static/favicon.png",
 	},
 	plugins: [
 		"gatsby-plugin-sass",
@@ -32,7 +32,18 @@ module.exports = {
 		{
 			resolve: "gatsby-plugin-manifest",
 			options: {
-				icon: "src/images/icon.png",
+				name: `Alex Holmes · Engineer`,
+				short_name: `AH Engie`,
+				start_url: `/`,
+				display: `standalone`,
+				icon: "static/favicon.png",
+				cache_busting_mode: 'none'
+			},
+		},
+		{
+			resolve: `gatsby-plugin-offline`,
+			options: {
+				precachePages: [`/`, `/blogs/`, `/about/`],
 			},
 		},
 		"gatsby-plugin-sharp",
