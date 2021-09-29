@@ -6,40 +6,21 @@ import SidebarCmp from "./sidebarCmp";
 const PageCmp = ({ hasSidebar, pageTitle, sideChil, children }) => {
 	return (
 		<div className="container is-fluid pl-0 pr-0">
-			<div className="rows">
-				<div className="row is-hidden-tablet">
-					<BurgerBar></BurgerBar>
-				</div>
-				<div className="row ">
-					<div className="columns">
-						{hasSidebar === true && (
-							<div
-								id="sidebar"
-								className="column
-									is-2-widescreen
-									is-3-desktop
-									is-4-tablet
-									is-hidden-mobile
-									pb-0
-									pl-0
-									pr-0
-									has-background-warning-light"
-							>
-								<SidebarCmp pageTitle={pageTitle}>
-									{sideChil}
-								</SidebarCmp>
-							</div>
-						)}
-						<div className="column pl-0 pr-0 has-background-warning">
-							<div className="columns">
-								<div className="column  is-full-desktop is-11-widescreen">
-									<div className="section ">{children}</div>
-								</div>
-							</div>
+			<BurgerBar></BurgerBar>
+			<div className="columns mr-0">
+				{hasSidebar === true && (
+					<SidebarCmp pageTitle={pageTitle}>{sideChil}</SidebarCmp>
+				)}
+				<div className="column pl-0 pr-0 has-background-warning">
+					<div className="columns mr-0">
+						<div className="column is-full-desktop is-11-widescreen">
+							<div className="section ">{children}</div>
 						</div>
 					</div>
 				</div>
-				<div className="row">
+			</div>
+			<div className="columns mr-0">
+				<div className="column p-0">
 					<FooterCmp></FooterCmp>
 				</div>
 			</div>

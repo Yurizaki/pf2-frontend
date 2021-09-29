@@ -28,7 +28,7 @@ class BurgerBar extends React.Component {
 		// let contactList = constants.getExternalList();
 
 		return (
-			<div className="columns">
+			<div className="columns mr-0 is-hidden-tablet">
 				<div className="column pr-0">
 					<nav
 						class="navbar"

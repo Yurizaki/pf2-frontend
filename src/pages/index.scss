@@ -1,10 +1,17 @@
 @import "~bulma/bulma.sass";
 
 
+$main-cold-color: #222831;
+$secn-cold-color: #393E46;
+$tert-cold-color: #00ADB5;
+$minr-cold-color: #EEEEEE;
+
+$main-warm-color: #311D3F;
+$secn-warm-color: #88304E;
+$tert-warm-color: #E23E57;
+$minr-warm-color: #522546;
+
 element.style {
-    /* overflow: hidden; */
-    /* overflow-y: hidden; */
-    /* overflow-x: hidden; */
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -12,12 +19,10 @@ html::-webkit-scrollbar {
     display: none;
 }
 
-#tsparticles {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    margin: 0;
-    padding: 0;
-    top: 0;
-    left: 0;
-  }
+// .nav-bg {
+//     background-color: $secn-warm-color;
+// }
+
+// .nav-links {
+//     border-top: 2px solid $minr-warm-color;
+// }

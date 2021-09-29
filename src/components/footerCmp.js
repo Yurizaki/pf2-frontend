@@ -7,14 +7,6 @@ class FooterCmp extends React.Component {
             latestCommit: ""
         }
 
-        // fetch("/api/git-commit")
-        // .then(res => res.json())
-        // .then(result => {
-        //     console.log(result)
-        //     this.setState({
-        //         latestCommit: result.latestCommit
-        //     })
-        // })
     }
 
     render() {
@@ -31,5 +23,3 @@ class FooterCmp extends React.Component {
 }
 
 export default FooterCmp;
-
-
