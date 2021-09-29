@@ -2,7 +2,7 @@ import * as React from "react";
 import PageCmp from "../components/pageCmp";
 import "./index.scss";
 import { useStaticQuery, graphql } from "gatsby";
-import SEO from "../components/Seo";
+import Seo from "../components/Seo";
 import { Link } from "gatsby";
 import { getBgCol, toggleScheme } from "../utils/colors";
 
@@ -28,13 +28,7 @@ export const query = graphql`
 	}
 `;
 
-function hello() {
-	console.log('hello world')
-}
-
 const IndexPage = (props) => {
-	console.log('MAIN')
-
 	let topExcerpts = []
 	if(props) {
 		if(props.data.allContentfulBlog) {
@@ -44,7 +38,7 @@ const IndexPage = (props) => {
 
 	return (
 		<div>
-			<SEO title="Home" />
+			<Seo title="Home" />
 			<PageCmp hasSidebar={true} pageTitle="Alex" col={getBgCol()} sideChil={sideChil}>
 				<div className="section p-0 pb-3 has-text-centered">
 					<p className="title is-3 is-spaced mb-1">Latest Blog Content</p>
@@ -66,8 +60,9 @@ const IndexPage = (props) => {
 
 				<div className="section p-0 pt-3 has-text-right">
 					<Link to="/blogs"><button className="button">More Blogs</button></Link>
-					<Link to="/"><button className="button" onClick={toggleScheme}>Toggle</button></Link>
-
+					{process.env.NODE_ENV === "development" ? (
+						<><Link to="/"><button className="button" onClick={toggleScheme}>Toggle</button></Link></>
+					) : <><button className="button" onClick={toggleScheme}>Toggle</button></>}
 				</div>
 			</PageCmp>
 		</div>

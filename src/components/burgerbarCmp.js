@@ -74,13 +74,3 @@ class BurgerBar extends React.Component {
 }
 
 export default BurgerBar;
-
-// let burgerIcon = "navbar-burger";
-// let isActive = "is-active"
-// function toggleBurger() {
-//     burgerIcon = burgerIcon.includes(isActive) ? "navbar-burger" : "navbar-burger is-active";
-//     console.log(burgerIcon)
-// }
-
-// // export default function BurgerBar ()  {
-// };

@@ -32,8 +32,8 @@ class ColorController {
 
     getBgColor() {
         let col = "";
-        this.colSchemes.some((scheme) => {
-            if (scheme.getName() == this.colScheme) {
+        this.colSchemes.forEach((scheme) => {
+            if (scheme.getName() === this.colScheme) {
                 col = scheme.getBgColor();
             }
         });

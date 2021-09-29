@@ -2,7 +2,8 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import { Link } from "gatsby";
 import PageCmp from "../../components/pageCmp";
-import SEO from "../../components/Seo";
+import Seo from "../../components/Seo";
+import { getBgCol } from "../../utils/colors";
 
 const sideChil = <>BLOG side here</>;
 export const query = graphql`
@@ -27,8 +28,8 @@ export default function BlogPage({ data }) {
 
 	return (
 		<div>
-			<SEO title="Blogs Home" />
-			<PageCmp hasSidebar={true} pageTitle="About" sideChil={sideChil}>
+			<Seo title="Blogs Home" />
+			<PageCmp hasSidebar={true} pageTitle="About" col={getBgCol()} sideChil={sideChil} >
 				<nav>
 					<ul>
 						{slugs.map((slug) => (

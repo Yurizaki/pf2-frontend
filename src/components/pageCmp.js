@@ -4,7 +4,6 @@ import FooterCmp from "./footerCmp";
 import SidebarCmp from "./sidebarCmp";
 
 const PageCmp = ({ hasSidebar, pageTitle, sideChil, col, children }) => {
-	console.log('ALEX + ' + col)
 	return (
 		<div className="container is-fluid pl-0 pr-0">
 			<BurgerBar></BurgerBar>

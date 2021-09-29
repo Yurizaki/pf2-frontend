@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import "./../pages/index.scss";
 import PageCmp from "../components/pageCmp";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import SEO from "../components/Seo";
+import Seo from "../components/Seo";
 
 export const query = graphql`
 	query ($slug: String!) {
@@ -54,7 +54,7 @@ const Blog = (props) => {
 
 	return (
 		<div>
-			<SEO title={title} />
+			<Seo title={title} />
 			<PageCmp hasSidebar={true} pageTitle="Alex">
 				<divs className="columns">
 					<divs className="column">
