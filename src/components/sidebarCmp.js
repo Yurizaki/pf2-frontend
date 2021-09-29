@@ -19,14 +19,13 @@ const SidebarCmp = ({ pageTitle, children }) => {
 				pr-0
 				nav-bg"
 		>
-			<div className="row">
-				<div className="section">
-					<section class="hero">
-						<p class="title has-text-right mb-0">Alex</p>
-						<p class="subtitle has-text-right mt-0">
+			<div className="section">
+					<section className="hero">
+						<p className="title has-text-right mb-0">Alex</p>
+						<p className="subtitle has-text-right mt-0">
 							Computing enthusiast
 						</p>
-						<figure class="image is-fullwidth">
+						<figure className="image is-fullwidth">
 							<img
 								src="https://bulma.io/images/placeholders/256x256.png"
 								alt="Me :)"
@@ -34,9 +33,7 @@ const SidebarCmp = ({ pageTitle, children }) => {
 						</figure>
 					</section>
 				</div>
-			</div>
-			<div className="row nav-links" >
-				<div className="section has-text-right">
+			<div className="section has-text-right">
 					<p className="is-underlined	">Site Links</p>
 					<nav>
 						<ul>
@@ -52,9 +49,7 @@ const SidebarCmp = ({ pageTitle, children }) => {
 						</ul>
 					</nav>
 				</div>
-			</div>
-			<div className="row nav-links">
-				<div class="section has-text-right">
+			<div className="section has-text-right">
 					<p className="is-underlined	">Contact</p>
 					<ul>
 						{contactList.map((tag) => (
@@ -68,7 +63,6 @@ const SidebarCmp = ({ pageTitle, children }) => {
 						))}
 					</ul>
 				</div>
-			</div>
 		</div>
 	);
 };

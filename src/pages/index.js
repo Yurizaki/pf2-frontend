@@ -4,6 +4,7 @@ import "./index.scss";
 import { useStaticQuery, graphql } from "gatsby";
 import SEO from "../components/Seo";
 import { Link } from "gatsby";
+import { getBgCol, toggleScheme } from "../utils/colors";
 
 const sideChil = <>side bar child her</>;
 export const query = graphql`
@@ -27,23 +28,27 @@ export const query = graphql`
 	}
 `;
 
+function hello() {
+	console.log('hello world')
+}
+
 const IndexPage = (props) => {
+	console.log('MAIN')
+
 	let topExcerpts = []
 	if(props) {
 		if(props.data.allContentfulBlog) {
 			topExcerpts = props.data.allContentfulBlog.edges;
 		}
 	}
-	console.log("props")
-	console.log(topExcerpts)
 
 	return (
 		<div>
 			<SEO title="Home" />
-			<PageCmp hasSidebar={true} pageTitle="Alex" sideChil={sideChil}>
+			<PageCmp hasSidebar={true} pageTitle="Alex" col={getBgCol()} sideChil={sideChil}>
 				<div className="section p-0 pb-3 has-text-centered">
-					<p class="title is-3 is-spaced mb-1">Latest Blog Content</p>
-					<p class="subtitle is-6">Feel free to click and read any conent you may find on this site. The following are some of the latest articles I've written.</p>
+					<p className="title is-3 is-spaced mb-1">Latest Blog Content</p>
+					<p className="subtitle is-6">Feel free to click and read any conent you may find on this site. The following are some of the latest articles I've written.</p>
 				</div>
 
 				<div id="rich-text-body" className="content">
@@ -51,8 +56,8 @@ const IndexPage = (props) => {
 						topExcerpts.map((element) => (
 							<Link to={"/blogs/"+element.node.slug}>
 								<div className="message is-info">
-									<p class="message-header mb-0">{element.node.title}</p>
-									<p class="message-body">{element.node.excerpt}</p>
+									<p className="message-header mb-0">{element.node.title}</p>
+									<p className="message-body">{element.node.excerpt}</p>
 								</div>
 							</Link>
 						))
@@ -60,7 +65,9 @@ const IndexPage = (props) => {
 				</div>
 
 				<div className="section p-0 pt-3 has-text-right">
-					<Link to="/blogs"><button class="button">More Blogs</button></Link>
+					<Link to="/blogs"><button className="button">More Blogs</button></Link>
+					<Link to="/"><button className="button" onClick={toggleScheme}>Toggle</button></Link>
+
 				</div>
 			</PageCmp>
 		</div>

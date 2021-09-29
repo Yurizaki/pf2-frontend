@@ -31,14 +31,14 @@ class BurgerBar extends React.Component {
 			<div className="columns mr-0 is-hidden-tablet">
 				<div className="column pr-0">
 					<nav
-						class="navbar"
+						className="navbar"
 						role="navigation"
 						aria-label="main navigation"
 					>
-						<div class="navbar-brand">
+						<div className="navbar-brand">
 							<span
 								role="button"
-								class={this.state.burgerIcon}
+								className={this.state.burgerIcon}
 								aria-label="menu"
 								aria-expanded="false"
 								data-target="navbarBasicExample"
@@ -49,7 +49,7 @@ class BurgerBar extends React.Component {
 								<span aria-hidden="true"></span>
 							</span>
 						</div>
-						<div id="navbarBasicExample" class={this.state.navMenu}>
+						<div id="navbarBasicExample" className={this.state.navMenu}>
 							<div className="navbar-start">
 								<ul>
 									{propsList.map((tag) => (
