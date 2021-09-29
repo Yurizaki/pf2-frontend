@@ -60,9 +60,10 @@ const IndexPage = (props) => {
 
 				<div className="section p-0 pt-3 has-text-right">
 					<Link to="/blogs"><button className="button">More Blogs</button></Link>
-					{process.env.NODE_ENV === "development" ? (
+					<Link to="/"><button className="button" onClick={toggleScheme}>Toggle</button></Link>
+					{/* {process.env.NODE_ENV === "development" ? (
 						<><Link to="/"><button className="button" onClick={toggleScheme}>Toggle</button></Link></>
-					) : <><button className="button" onClick={toggleScheme}>Toggle</button></>}
+					) : <><button className="button" onClick={toggleScheme}>Toggle</button></>} */}
 				</div>
 			</PageCmp>
 		</div>
