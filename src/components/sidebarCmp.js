@@ -7,11 +7,11 @@ const SidebarCmp = ({ pageTitle, children }) => {
 	let propsList =  constants.getPropsList()
 	let contactList = constants.getExternalList();
 
-	console.log(propsList)
+	// console.log(propsList)
 
-	propsList.forEach(e => {
-		console.log(e.url)
-	})
+	// propsList.forEach(e => {
+	// 	console.log(e.url)
+	// })
 
 	return (
 		<div>

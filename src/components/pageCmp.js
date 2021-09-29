@@ -3,10 +3,7 @@ import BurgerBar from "./burgerbarCmp";
 import FooterCmp from "./footerCmp";
 import SidebarCmp from "./sidebarCmp";
 
-
 const PageCmp = ({ hasSidebar, pageTitle, sideChil, children }) => {
-
-
 	return (
 		<div className="container is-fluid pl-0 pr-0">
 			<div className="rows">
@@ -33,9 +30,11 @@ const PageCmp = ({ hasSidebar, pageTitle, sideChil, children }) => {
 								</SidebarCmp>
 							</div>
 						)}
-						<div className="column  pl-0 pr-0 has-background-warning">
-							<div className="section">
-								{children}
+						<div className="column pl-0 pr-0 has-background-warning">
+							<div className="columns">
+								<div className="column  is-full-desktop is-11-widescreen">
+									<div className="section ">{children}</div>
+								</div>
 							</div>
 						</div>
 					</div>

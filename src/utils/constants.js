@@ -2,7 +2,7 @@ class Constants {
 	constructor() {
 		const homeProps = { url: "/", text: "Home" };
 		const aboutProps = { url: "/about", text: "About Me", };
-		const blogProps = { url: "/blogs", text: "Blog", };
+		const blogProps = { url: "/blogs", text: "Blogs", };
 
 		const github = { url: "https://github.com/Yurizaki", text: "Github", };
 		const linkedin = { url: "https://www.linkedin.com/in/alex-holmes-296435128", text: "LinkedIn", };
