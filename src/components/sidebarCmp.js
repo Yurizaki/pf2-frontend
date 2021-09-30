@@ -23,7 +23,7 @@ const SidebarCmp = ({ pageTitle, children }) => {
 					<section className="hero">
 						<p className="title has-text-right mb-0">Alex</p>
 						<p className="subtitle has-text-right mt-0">
-							Computing enthusiast
+							Computing & Cybersecurity enthusiast
 						</p>
 						<figure className="image is-fullwidth">
 							<img

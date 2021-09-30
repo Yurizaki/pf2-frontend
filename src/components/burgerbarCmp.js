@@ -35,6 +35,8 @@ class BurgerBar extends React.Component {
 						aria-label="main navigation"
 					>
 						<div className="navbar-brand">
+							<p className="title ml-2 mr-2 mt-2 pb-0 mb-0">Alex</p>
+							<p className="subtitle ml-2 mr-2 mt-5 pb-0 mb-0 is-size-7">Computing & Cybersecurity enthusiast</p>
 							<span
 								role="button"
 								className={this.state.burgerIcon}

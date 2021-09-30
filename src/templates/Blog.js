@@ -4,7 +4,8 @@ import "./../pages/index.scss";
 import PageCmp from "../components/pageCmp";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Seo from "../components/Seo";
-import { getBgCol, toggleScheme, getSchemeName } from "../utils/colors";
+import { getBgCol } from "../utils/colors";
+import ColorToggleCmp from "../components/colorToggleCmp";
 
 export const query = graphql`
 	query ($slug: String!) {
@@ -12,6 +13,7 @@ export const query = graphql`
 			edges {
 				node {
 					title
+					slug
 					updatedAt
 					createdAt
 					paragraph1 {
@@ -53,11 +55,14 @@ const Blog = (props) => {
 		"-" +
 		createdAt.getFullYear();
 
+	let slug = props.data.allContentfulBlog.edges[0].node.slug;
+
 	const col = getBgCol();
 		return (
 			<div className={col}>
 			<Seo title={title} />
 			<PageCmp hasSidebar={true} pageTitle="Alex">
+				<ColorToggleCmp url={"/blogs/" + slug}></ColorToggleCmp>
 				<divs className="columns">
 					<divs className="column">
 						<p className="title">{title}</p>

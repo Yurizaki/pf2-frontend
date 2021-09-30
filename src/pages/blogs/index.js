@@ -3,7 +3,8 @@ import { graphql } from "gatsby";
 import { Link } from "gatsby";
 import PageCmp from "../../components/pageCmp";
 import Seo from "../../components/Seo";
-import { getBgCol, toggleScheme, getSchemeName } from "../../utils/colors";
+import { getBgCol } from "../../utils/colors";
+import ColorToggleCmp from "../../components/colorToggleCmp";
 
 const sideChil = <>BLOG side here</>;
 export const query = graphql`
@@ -31,6 +32,7 @@ export default function BlogPage({ data }) {
 		<div className={col}>
 			<Seo title="Blogs Home" />
 			<PageCmp hasSidebar={true} pageTitle="About" col={getBgCol()} sideChil={sideChil} >
+				<ColorToggleCmp url="/blogs"></ColorToggleCmp>
 				<nav>
 					<ul>
 						{slugs.map((slug) => (

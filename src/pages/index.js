@@ -4,7 +4,8 @@ import "./index.scss";
 import { graphql } from "gatsby";
 import Seo from "../components/Seo";
 import { Link } from "gatsby";
-import { getBgCol, toggleScheme, getSchemeName } from "../utils/colors";
+import { getBgCol } from "../utils/colors";
+import ColorToggleCmp from "../components/colorToggleCmp";
 
 const sideChil = <>side bar child her</>;
 export const query = graphql`
@@ -41,9 +42,8 @@ const IndexPage = (props) => {
 		<div className={col}>
 			<Seo title="Home" />
 			<PageCmp hasSidebar={true} pageTitle="Alex" sideChil={sideChil} col={col}>
+				<ColorToggleCmp url="/"></ColorToggleCmp>
 				<div className="section p-0 pb-3 has-text-right">
-					<Link to="/"><button className="button" onClick={toggleScheme}>Toggle Color: {getSchemeName()}</button></Link>
-					<div className="card-separator mb-3 mt-3"></div>
 					<p className="title is-3 is-spaced mb-1">Latest Blog Content</p>
 					<p className="subtitle is-6">Feel free to click and read any conent you may find on this site. The following are some of the latest articles I've written.</p>
 				</div>
