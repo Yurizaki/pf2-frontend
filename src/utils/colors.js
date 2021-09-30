@@ -1,3 +1,5 @@
+import "../styles/colors.scss"
+
 class ColorScheme {
 	constructor(name, bgCol) {
         this.name = name;
@@ -17,40 +19,52 @@ class ColorController {
 	constructor() {
 		const COLD = new ColorScheme("cold", "cold-bg-col");
 		const WARM = new ColorScheme("warm", "warm-bg-col");
+		const RAND = new ColorScheme("random", "rand-bg-col");
+		const JUICY = new ColorScheme("juicy", "juicy-bg-col");
+		const FOREST = new ColorScheme("forest", "forest-bg-col");
+		const FRENCH = new ColorScheme("french", "french-bg-col");
+		this.colSchemes = [COLD, WARM, FOREST, FRENCH];
 
-		this.colSchemes = [COLD, WARM];
-		this.colScheme = "cold";
+        this.index = 0;
+        this.max = this.colSchemes.length;
 	}
 
-    getScheme() {
-        return this.colScheme;
+    getIndex() {
+        return this.index;
     }
 
-    setScheme(scheme) {
-        this.colScheme = scheme;
+    setIndex(index) {
+        this.index = index;
+    }
+
+    getMaxIndex() {
+        return this.max;
+    }
+
+    getScheme() {
+        return this.colSchemes[this.index].getName();
     }
 
     getBgColor() {
-        let col = "";
-        this.colSchemes.forEach((scheme) => {
-            if (scheme.getName() === this.colScheme) {
-                col = scheme.getBgColor();
-            }
-        });
-        return col
+        return this.colSchemes[this.index].getBgColor();
     }
 }
 
 const col = new ColorController();
+
+export function getSchemeName() {
+	return col.getScheme().toUpperCase();
+}
 
 export function getBgCol() {
 	return col.getBgColor();
 }
 
 export function toggleScheme() {
-	if (col.getScheme() === "cold") {
-		col.setScheme("warm");
-	} else {
-		col.setScheme("cold");
+	if (col.getIndex() + 1 < col.getMaxIndex()) {
+		col.setIndex(col.getIndex() + 1);
+	}
+	else {
+		col.setIndex(0);
 	}
 }

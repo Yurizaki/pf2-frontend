@@ -4,6 +4,7 @@ import "./../pages/index.scss";
 import PageCmp from "../components/pageCmp";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Seo from "../components/Seo";
+import { getBgCol, toggleScheme, getSchemeName } from "../utils/colors";
 
 export const query = graphql`
 	query ($slug: String!) {
@@ -52,8 +53,9 @@ const Blog = (props) => {
 		"-" +
 		createdAt.getFullYear();
 
-	return (
-		<div>
+	const col = getBgCol();
+		return (
+			<div className={col}>
 			<Seo title={title} />
 			<PageCmp hasSidebar={true} pageTitle="Alex">
 				<divs className="columns">

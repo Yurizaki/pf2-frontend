@@ -11,10 +11,10 @@ const PageCmp = ({ hasSidebar, pageTitle, sideChil, col, children }) => {
 				{hasSidebar === true && (
 					<SidebarCmp pageTitle={pageTitle}>{sideChil}</SidebarCmp>
 				)}
-				<div className={"column pl-0 pr-0 " + col}>
+				<div className={"column pl-0 pr-0 "}>
 					<div className="columns mr-0">
-						<div className="column is-full-desktop is-11-widescreen">
-							<div className="section ">{children}</div>
+						<div className="column is-full-desktop is-11-widescreen pr-0">
+							<div className="section pr-3">{children}</div>
 						</div>
 					</div>
 				</div>

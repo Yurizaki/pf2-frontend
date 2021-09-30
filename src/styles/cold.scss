@@ -1,0 +1,93 @@
+//https://colorhunt.co/palette/222831393e4600adb5eeeeee
+$cold-1: #222831;
+$cold-2: #393E46;
+$cold-3: #00ADB5;
+$cold-4: #EEEEEE;
+$cold-5: #1d3557;
+
+.cold-bg-col {
+    background-color: $cold-1;
+    color: $cold-4;
+
+    .title, .subtitle, h1, h2, h3, h4, h5, h6 {
+        color: $cold-4 !important;
+    }
+
+    .card {
+        background-color: $cold-2;
+        border-radius: 0px;
+
+        .card-footer {
+            border-top: 1px solid $cold-1;
+        }
+
+        .card-footer:hover {
+            color: $cold-4;
+            background-color: $cold-5;
+        }
+    }
+
+    .card-separator {
+        height: 10px;
+        width: 100%;
+        border-bottom: 1px solid $cold-2;
+    }
+
+    .sidebar {
+        background-color: $cold-2;
+
+        .sidebar-section {
+            border-top: 1px solid $cold-1;
+        }
+    }
+
+    .burger-nav {
+        background-color: $cold-1;
+        border-bottom: 1px solid $cold-2;
+
+        .navbar-burger {
+            background-color: $cold-2;
+            color: $cold-3;
+        }
+
+        .navbar-menu {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .navbar-item {
+            background-color: $cold-3;
+            border-top: 1px solid $cold-5;
+
+            a {
+                color: $cold-5;
+            }
+        }
+    }
+
+    .footer {
+        color: $cold-1;
+        background-color: $cold-3;
+    }
+
+    a {
+        color: $cold-3;
+    }
+
+    a:hover {
+        color: $cold-4;
+    }
+
+    button {
+        border-radius: 0px;
+        background-color: $cold-3;
+        border: 1px solid $cold-5;
+        color: $cold-1;
+    }
+
+    button:hover {
+        background-color: $cold-5;
+        border: 1px solid $cold-3;
+        color: $cold-4;
+    }
+}

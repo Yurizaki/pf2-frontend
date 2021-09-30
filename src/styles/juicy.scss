@@ -1,0 +1,94 @@
+//https://coolors.co/264653-2a9d8f-e9c46a-f4a261-e76f51
+$juicy-2: #264653;
+$juicy-4: #228378;
+$juicy-1: #E9C46A;
+$juicy-5: #F4A261;
+$juicy-3: #E76F51;
+
+
+.juicy-bg-col {
+    background-color: $juicy-1;
+    color: $juicy-4;
+
+    .title, .subtitle, h1, h2, h3, h4, h5, h6 {
+        color: $juicy-4 !important;
+    }
+
+    .card {
+        background-color: $juicy-2;
+        border-radius: 0px;
+
+        .card-footer {
+            border-top: 1px solid $juicy-1;
+        }
+
+        .card-footer:hover {
+            color: $juicy-4;
+            background-color: $juicy-5;
+        }
+    }
+
+    .card-separator {
+        height: 10px;
+        width: 100%;
+        border-bottom: 1px solid $juicy-2;
+    }
+
+    .sidebar {
+        background-color: $juicy-2;
+
+        .sidebar-section {
+            border-top: 1px solid $juicy-1;
+        }
+    }
+
+    .burger-nav {
+        background-color: $juicy-1;
+        border-bottom: 1px solid $juicy-2;
+
+        .navbar-burger {
+            background-color: $juicy-2;
+            color: $juicy-3;
+        }
+
+        .navbar-menu {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .navbar-item {
+            background-color: $juicy-3;
+            border-top: 1px solid $juicy-5;
+
+            a {
+                color: $juicy-5;
+            }
+        }
+    }
+
+    .footer {
+        color: $juicy-1;
+        background-color: $juicy-3;
+    }
+
+    a {
+        color: $juicy-3;
+    }
+
+    a:hover {
+        color: $juicy-4;
+    }
+
+    button {
+        border-radius: 0px;
+        background-color: $juicy-3;
+        border: 1px solid $juicy-5;
+        color: $juicy-1;
+    }
+
+    button:hover {
+        background-color: $juicy-5;
+        border: 1px solid $juicy-3;
+        color: $juicy-4;
+    }
+}

@@ -1,0 +1,92 @@
+$warm-1: #311D3F;
+$warm-2: #522546;
+$warm-3: #E23E57;
+$warm-4: #EEEEEE;
+$warm-5: #88304E;
+
+.warm-bg-col {
+    background-color: $warm-1;
+    color: $warm-4;
+
+    .title, .subtitle, h1, h2, h3, h4, h5, h6 {
+        color: $warm-4 !important;
+    }
+
+    .card {
+        background-color: $warm-2;
+        border-radius: 0px;
+
+        .card-footer {
+            border-top: 1px solid $warm-1;
+        }
+
+        .card-footer:hover {
+            color: $warm-4;
+            background-color: $warm-5;
+        }
+    }
+
+    .card-separator {
+        height: 10px;
+        width: 100%;
+        border-bottom: 1px solid $warm-2;
+    }
+
+    .sidebar {
+        background-color: $warm-2;
+
+        .sidebar-section {
+            border-top: 1px solid $warm-1;
+        }
+    }
+
+    .burger-nav {
+        background-color: $warm-1;
+        border-bottom: 1px solid $warm-2;
+
+        .navbar-burger {
+            background-color: $warm-2;
+            color: $warm-3;
+        }
+
+        .navbar-menu {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .navbar-item {
+            background-color: $warm-3;
+            border-top: 1px solid $warm-5;
+
+            a {
+                color: $warm-5;
+            }
+        }
+    }
+
+    .footer {
+        color: $warm-1;
+        background-color: $warm-3;
+    }
+
+    a {
+        color: $warm-3;
+    }
+
+    a:hover {
+        color: $warm-4;
+    }
+
+    button {
+        border-radius: 0px;
+        background-color: $warm-3;
+        border: 1px solid $warm-5;
+        color: $warm-1;
+    }
+
+    button:hover {
+        background-color: $warm-5;
+        border: 1px solid $warm-3;
+        color: $warm-4;
+    }
+}

@@ -25,13 +25,12 @@ class BurgerBar extends React.Component {
 
 	render() {
 		let propsList = constants.getPropsList();
-		// let contactList = constants.getExternalList();
 
 		return (
 			<div className="columns mr-0 is-hidden-tablet">
 				<div className="column pr-0">
 					<nav
-						className="navbar"
+						className="navbar burger-nav"
 						role="navigation"
 						aria-label="main navigation"
 					>
@@ -55,11 +54,11 @@ class BurgerBar extends React.Component {
 									{propsList.map((tag) => (
 										<>
 											{
-												<li className="navbar-item">
-													<Link to={tag.url}>
+												<Link to={tag.url}>
+													<li className="navbar-item">
 														{tag.text}
-													</Link>
-												</li>
+													</li>
+												</Link>
 											}
 										</>
 									))}

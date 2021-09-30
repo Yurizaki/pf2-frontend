@@ -1,0 +1,95 @@
+//https://coolors.co/d33f49-d7c0d0-eff0d1-77ba99-262730
+$rand-1: #262730;
+$rand-2: #77BA99;
+$rand-3: #D33F49;
+$rand-4: #EFF0D1;
+$rand-5: #D7C0D0;
+
+
+.rand-bg-col {
+    background-color: $rand-1;
+    color: $rand-4;
+
+    .title, .subtitle, h1, h2, h3, h4, h5, h6 {
+        color: $rand-4 !important;
+    }
+
+    .card {
+        background-color: $rand-2;
+        border-radius: 0px;
+
+        .card-footer {
+            border-top: 1px solid $rand-1;
+        }
+
+        .card-footer:hover {
+            color: $rand-4;
+            background-color: $rand-5;
+        }
+    }
+
+    .card-separator {
+        height: 10px;
+        width: 100%;
+        border-bottom: 1px solid $rand-2;
+    }
+
+    .sidebar {
+        background-color: $rand-2;
+
+        .sidebar-section {
+            border-top: 1px solid $rand-1;
+        }
+    }
+
+
+    .burger-nav {
+        background-color: $rand-1;
+        border-bottom: 1px solid $rand-2;
+
+        .navbar-burger {
+            background-color: $rand-2;
+            color: $rand-3;
+        }
+
+        .navbar-menu {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .navbar-item {
+            background-color: $rand-3;
+            border-top: 1px solid $rand-5;
+
+            a {
+                color: $rand-5;
+            }
+        }
+    }
+
+    .footer {
+        color: $rand-1;
+        background-color: $rand-3;
+    }
+
+    a {
+        color: $rand-3;
+    }
+
+    a:hover {
+        color: $rand-4;
+    }
+
+    button {
+        border-radius: 0px;
+        background-color: $rand-3;
+        border: 1px solid $rand-5;
+        color: $rand-1;
+    }
+
+    button:hover {
+        background-color: $rand-5;
+        border: 1px solid $rand-3;
+        color: $rand-4;
+    }
+}

@@ -11,10 +11,13 @@ class FooterCmp extends React.Component {
 
     render() {
         return (
-            <footer className="footer has-background-danger pb-6">
+            <footer className="footer pb-6">
                 <div className="content has-text-centered">
                     <p>
-                        Built on React + Gatsby. With Contentful CMS integration. Hosted on Gatsby Cloud.
+                        Built on React w/Gatsby.
+                        With Contentful CMS integration.
+                        Stylised with Bulma.
+                        Hosted on Gatsby Cloud.
                     </p>
                 </div>
             </footer>

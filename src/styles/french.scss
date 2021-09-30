@@ -1,0 +1,94 @@
+//https://coolors.co/e63946-f1faee-a8dadc-457b9d-1d3557
+$french-1: #1d3557;
+$french-2: #e63946;
+$french-3: #a8dadc;
+$french-4: #f1faee;
+$french-5: #457b9d;
+
+
+.french-bg-col {
+    background-color: $french-1;
+    color: $french-4;
+
+    .title, .subtitle, h1, h2, h3, h4, h5, h6 {
+        color: $french-4 !important;
+    }
+
+    .card {
+        background-color: $french-2;
+        border-radius: 0px;
+
+        .card-footer {
+            border-top: 1px solid $french-1;
+        }
+
+        .card-footer:hover {
+            color: $french-4;
+            background-color: $french-5;
+        }
+    }
+
+    .card-separator {
+        height: 10px;
+        width: 100%;
+        border-bottom: 1px solid $french-2;
+    }
+
+    .sidebar {
+        background-color: $french-2;
+
+        .sidebar-section {
+            border-top: 1px solid $french-1;
+        }
+    }
+
+    .burger-nav {
+        background-color: $french-1;
+        border-bottom: 1px solid $french-2;
+
+        .navbar-burger {
+            background-color: $french-2;
+            color: $french-3;
+        }
+
+        .navbar-menu {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .navbar-item {
+            background-color: $french-3;
+            border-top: 1px solid $french-5;
+
+            a {
+                color: $french-5;
+            }
+        }
+    }
+
+    .footer {
+        color: $french-1;
+        background-color: $french-3;
+    }
+
+    a {
+        color: $french-3;
+    }
+
+    a:hover {
+        color: $french-4;
+    }
+
+    button {
+        border-radius: 0px;
+        background-color: $french-3;
+        border: 1px solid $french-5;
+        color: $french-1;
+    }
+
+    button:hover {
+        background-color: $french-5;
+        border: 1px solid $french-3;
+        color: $french-4;
+    }
+}

@@ -1,0 +1,93 @@
+//https://coolors.co/94e8b4-72bda3-5e8c61-4e6151-3b322c
+$forest-1: #3B322C;
+$forest-2: #4E6151;
+$forest-3: #72BDA3;
+$forest-4: #94E8B4;
+$forest-5: #5E8C61;
+
+.forest-bg-col {
+    background-color: $forest-1;
+    color: $forest-4;
+
+    .title, .subtitle, h1, h2, h3, h4, h5, h6 {
+        color: $forest-4 !important;
+    }
+
+    .card {
+        background-color: $forest-2;
+        border-radius: 0px;
+
+        .card-footer {
+            border-top: 1px solid $forest-1;
+        }
+
+        .card-footer:hover {
+            color: $forest-4;
+            background-color: $forest-5;
+        }
+    }
+
+    .card-separator {
+        height: 10px;
+        width: 100%;
+        border-bottom: 1px solid $forest-2;
+    }
+
+    .sidebar {
+        background-color: $forest-2;
+
+        .sidebar-section {
+            border-top: 1px solid $forest-1;
+        }
+    }
+
+    .burger-nav {
+        background-color: $forest-1;
+        border-bottom: 1px solid $forest-2;
+
+        .navbar-burger {
+            background-color: $forest-2;
+            color: $forest-3;
+        }
+
+        .navbar-menu {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .navbar-item {
+            background-color: $forest-3;
+            border-top: 1px solid $forest-5;
+
+            a {
+                color: $forest-5;
+            }
+        }
+    }
+
+    .footer {
+        color: $forest-1;
+        background-color: $forest-3;
+    }
+
+    a {
+        color: $forest-3;
+    }
+
+    a:hover {
+        color: $forest-4;
+    }
+
+    button {
+        border-radius: 0px;
+        background-color: $forest-3;
+        border: 1px solid $forest-5;
+        color: $forest-1;
+    }
+
+    button:hover {
+        background-color: $forest-5;
+        border: 1px solid $forest-3;
+        color: $forest-4;
+    }
+}

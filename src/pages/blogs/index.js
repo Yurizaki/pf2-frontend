@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import { Link } from "gatsby";
 import PageCmp from "../../components/pageCmp";
 import Seo from "../../components/Seo";
-import { getBgCol } from "../../utils/colors";
+import { getBgCol, toggleScheme, getSchemeName } from "../../utils/colors";
 
 const sideChil = <>BLOG side here</>;
 export const query = graphql`
@@ -26,8 +26,9 @@ export default function BlogPage({ data }) {
 		});
 	}
 
+	const col = getBgCol();
 	return (
-		<div>
+		<div className={col}>
 			<Seo title="Blogs Home" />
 			<PageCmp hasSidebar={true} pageTitle="About" col={getBgCol()} sideChil={sideChil} >
 				<nav>

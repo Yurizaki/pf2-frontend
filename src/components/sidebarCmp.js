@@ -17,7 +17,7 @@ const SidebarCmp = ({ pageTitle, children }) => {
 				pb-0
 				pl-0
 				pr-0
-				nav-bg"
+				sidebar"
 		>
 			<div className="section">
 					<section className="hero">
@@ -33,7 +33,7 @@ const SidebarCmp = ({ pageTitle, children }) => {
 						</figure>
 					</section>
 				</div>
-			<div className="section has-text-right">
+			<div className="section has-text-right sidebar-section">
 					<p className="is-underlined	">Site Links</p>
 					<nav>
 						<ul>
@@ -49,7 +49,7 @@ const SidebarCmp = ({ pageTitle, children }) => {
 						</ul>
 					</nav>
 				</div>
-			<div className="section has-text-right">
+			<div className="section has-text-right sidebar-section">
 					<p className="is-underlined	">Contact</p>
 					<ul>
 						{contactList.map((tag) => (
