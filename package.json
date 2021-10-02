@@ -21,6 +21,7 @@
     "contentful": "^9.0.0",
     "gatsby": "^3.13.1",
     "gatsby-config": "^0.1.1",
+    "gatsby-plugin-google-analytics": "^3.14.0",
     "gatsby-plugin-image": "^1.14.0",
     "gatsby-plugin-manifest": "^3.14.0",
     "gatsby-plugin-offline": "^4.14.0",

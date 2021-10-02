@@ -64,5 +64,15 @@ module.exports = {
 				enableTags: true,
 			},
 		},
+		{
+			resolve: `gatsby-plugin-google-analytics`,
+			options: {
+				trackingId: "G-SV0C84F0P1",
+				head: false,
+				anonymize: false,
+				respectDNT: false,
+				defer: false,
+			},
+		  },
 	],
 };
