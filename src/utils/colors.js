@@ -1,4 +1,5 @@
 import "../styles/colors.scss"
+import { getSessionItem, saveSessionItem } from "./utils";
 
 class ColorScheme {
 	constructor(name, bgCol) {
@@ -68,4 +69,10 @@ export function toggleScheme() {
 		col.setIndex(0);
 	}
 
+    saveSessionItem('scheme-index', col.getIndex());
+}
+
+const index = parseInt(getSessionItem('scheme-index'));
+if (index) {
+    col.setIndex(index);
 }

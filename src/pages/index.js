@@ -71,48 +71,54 @@ const IndexPage = (props) => {
 				</div>
 
 				{topExcerpts.map((element) => (
-					<div class="card">
-						<div className="columns p-0 m-0 is-mobile">
-							<div className="column is-one-fifth-desktop p-0 m-0 is-hidden-mobile">
-								<figure class="image is-4by3">
-									<img
-										src="https://bulma.io/images/placeholders/1280x960.png"
-										alt="Placeholder image"
-									/>
-								</figure>
-							</div>
+					<div>
+						<div class="card">
+							<div className="columns p-0 m-0 is-mobile">
+								<div className="column is-one-fifth-desktop p-0 m-0 is-hidden-mobile">
+									<figure class="image is-4by3">
+										<img
+											src="https://bulma.io/images/placeholders/1280x960.png"
+											alt="Placeholder image"
+										/>
+									</figure>
+								</div>
 
-							<div className="column is-three-fifths-desktop p-0 m-0">
-								<div class="card-content p-2 m-0">
-									<div class="content">
-										<p class="title is-size-5 p-0 m-0">
-											{element.node.title}
-										</p>
-										<p class="subtitle is-size-7 p-0 m-0 mt-3">
-											{element.node.excerpt}
-										</p>
-										<div className="columns mt-3 p-0 m-0 ">
-											<span className="tag tag-tag m-0 p-0 pl-2 pr-2">
-												Created: {createdAt}
-											</span>
-											<Link
-												className="p-0 m-0 ml-2"
-												to={
-													"/blogs/" +
-													element.node.slug
-												}
-											>
-												Read Arcticle...
-											</Link>
+								<div className="column is-three-fifths-desktop p-0 m-0">
+									<div class="card-content p-2 m-0">
+										<div class="content">
+											<p class="title is-size-5 p-0 m-0">
+												{element.node.title}
+											</p>
+											<p class="subtitle is-size-7 p-0 m-0 mt-3">
+												{element.node.excerpt}
+											</p>
+											<div className="columns mt-3 p-0 m-0 ">
+												<span className="tag tag-tag m-0 p-0 pl-2 pr-2">
+													Created
+													: { new Date(element.node.createdAt).getDate() }
+													-{ new Date(element.node.createdAt).getMonth() }
+													-{ new Date(element.node.createdAt).getFullYear() }
+												</span>
+												<Link
+													className="p-0 m-0 ml-2"
+													to={
+														"/blogs/" +
+														element.node.slug
+													}
+												>
+													Read Arcticle...
+												</Link>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
+
+						<div className="card-separator mb-3"></div>
 					</div>
 				))}
 
-				<div className="card-separator"></div>
 
 				<div className="section p-0 pt-3 has-text-right">
 					<Link to="/blogs">

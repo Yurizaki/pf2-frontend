@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import "./../pages/index.scss";
 import PageCmp from "../components/pageCmp";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
@@ -95,9 +95,9 @@ const Blog = (props) => {
 							New Vocabulary used in this article
 						</p>
 
-						<div class="columns is-flex-mobile is-flex-wrap-wrap">
+						<div class="columns is-flex-mobile is-flex-wrap-wrap ">
 							{vocabulary.map((vocab) => (
-								<div class="column is-one-fifth-tablet is-two-fifths-mobile box m-4 cards">
+								<div class="column is-one-fifth-tablet is-two-fifths-mobile box m-2 cards">
 									<p class="title is-size-5 mb-5">
 										{vocab.chinese}
 									</p>
@@ -119,7 +119,7 @@ const Blog = (props) => {
 							<div className="column">
 								{grammar.map((grammar) => (
 									<div class="columns">
-										<div class="column is-11 box m-5 cards">
+										<div class="column is-11 box m-4 cards">
 											<p class="title is-size-5 mb-5">
 												{grammar.rule}
 											</p>
@@ -141,6 +141,15 @@ const Blog = (props) => {
 						<p className="is-size-4">Grammar Explained</p>
 						{documentToReactComponents(JSON.parse(renderedHtml))}
 					</div>
+				</div>
+
+
+				<div className="card-separator"></div>
+
+				<div className="section p-0 pt-3 has-text-right">
+					<Link to="../">
+						<button className="button">Back to Blogs</button>
+					</Link>
 				</div>
 			</PageCmp>
 		</div>
