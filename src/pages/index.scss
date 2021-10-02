@@ -8,3 +8,7 @@ element.style {
 html::-webkit-scrollbar {
     display: none;
 }
+
+.blog-tiles {
+    flex-wrap: wrap;
+}

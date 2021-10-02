@@ -12,17 +12,29 @@ export const query = graphql`
 		allContentfulBlog(filter: { slug: { eq: $slug } }) {
 			edges {
 				node {
+					createdAt
 					title
 					slug
 					updatedAt
-					createdAt
-					paragraph1 {
-						raw
-					}
 					metadata {
 						tags {
 							name
 						}
+					}
+					vocabulary {
+						data {
+							chinese
+							pinyin
+						}
+					}
+					grammar {
+						data {
+							desc
+							rule
+						}
+					}
+					paragraph1 {
+						raw
 					}
 				}
 			}
@@ -34,10 +46,17 @@ const Blog = (props) => {
 	let renderedHtml =
 		props.data.allContentfulBlog.edges[0].node.paragraph1.raw;
 	let title = props.data.allContentfulBlog.edges[0].node.title;
+	let slug = props.data.allContentfulBlog.edges[0].node.slug;
 	let tag = props.data.allContentfulBlog.edges[0].node.metadata.tags[0].name;
 	let updatedAt = new Date(
 		props.data.allContentfulBlog.edges[0].node.updatedAt
 	);
+	let createdAt = new Date(
+		props.data.allContentfulBlog.edges[0].node.createdAt
+	);
+	let vocabulary = props.data.allContentfulBlog.edges[0].node.vocabulary.data;
+	let grammar = props.data.allContentfulBlog.edges[0].node.grammar.data;
+
 	updatedAt =
 		updatedAt.getDate() +
 		"-" +
@@ -45,9 +64,6 @@ const Blog = (props) => {
 		"-" +
 		updatedAt.getFullYear();
 
-	let createdAt = new Date(
-		props.data.allContentfulBlog.edges[0].node.createdAt
-	);
 	createdAt =
 		createdAt.getDate() +
 		"-" +
@@ -55,41 +71,77 @@ const Blog = (props) => {
 		"-" +
 		createdAt.getFullYear();
 
-	let slug = props.data.allContentfulBlog.edges[0].node.slug;
-
+	console.log(vocabulary);
 	const col = getBgCol();
-		return (
-			<div className={col}>
+	return (
+		<div className={col}>
 			<Seo title={title} />
 			<PageCmp hasSidebar={true} pageTitle="Alex">
 				<ColorToggleCmp url={"/blogs/" + slug}></ColorToggleCmp>
-				<divs className="columns">
-					<divs className="column">
-						<p className="title">{title}</p>
-					</divs>
-				</divs>
-				<divs className="columns is-1">
-					<divs className="column is-narrow">
-						<span class="tag is-success">
-							Created At: {createdAt}
-						</span>
-					</divs>
-					<divs className="column is-narrow">
-						<span class="tag is-info">Updated At: {updatedAt}</span>
-					</divs>
-					<divs className="column is-narrow">
-						<span class="tag is-danger">Tags: {tag}</span>
-					</divs>
-				</divs>
-				<divs className="columns">
-					<div className="content">
-						<divs className="column">
-							{documentToReactComponents(
-								JSON.parse(renderedHtml)
-							)}
-						</divs>
+				<div className="columns">
+					<div className="column">
+						<p className="title is-size-1 pb-1 mb-1">{title}</p>
+						<span className="tag date-tag mr-2">Created: {createdAt}</span>
+						<span className="tag date-tag mr-2">Updated: {updatedAt}</span>
+						<span className="tag tag-tag">Tag: {tag}</span>
 					</div>
-				</divs>
+				</div>
+
+				<div className="card-separator mb-3 mt-3"></div>
+
+				<div className="columns">
+					<div className="column content">
+						<p className="is-size-4">
+							New Vocabulary used in this article
+						</p>
+
+						<div class="columns is-flex-mobile is-flex-wrap-wrap">
+							{vocabulary.map((vocab) => (
+								<div class="column is-one-fifth-tablet is-two-fifths-mobile box m-4 cards">
+									<p class="title is-size-5 mb-5">
+										{vocab.chinese}
+									</p>
+									<p class="subtitle is-size-6">
+										{vocab.pinyin}
+									</p>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+
+				<div className="card-separator mb-3 mt-3"></div>
+
+				<div className="columns">
+					<div className="column content">
+						<p className="is-size-4">New Grammar rules</p>
+						<div class="columns">
+							<div className="column">
+								{grammar.map((grammar) => (
+									<div class="columns">
+										<div class="column is-11 box m-5 cards">
+											<p class="title is-size-5 mb-5">
+												{grammar.rule}
+											</p>
+											<p class="subtitle is-size-6 ">
+												{grammar.desc}
+											</p>
+										</div>
+									</div>
+								))}
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div className="card-separator mb-3 mt-3"></div>
+
+				<div className="columns">
+					<div className="column content">
+						<p className="is-size-4">Grammar Explained</p>
+						{documentToReactComponents(JSON.parse(renderedHtml))}
+					</div>
+				</div>
 			</PageCmp>
 		</div>
 	);

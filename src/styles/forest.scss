@@ -90,4 +90,26 @@ $forest-5: #5E8C61;
         border: 1px solid $forest-3;
         color: $forest-4;
     }
+
+    .cards {
+        background-color: $forest-3;
+
+        .title, .subtitle, h1, h2, h3, h4, h5, h6 {
+            color: $forest-1 !important;
+        }
+
+        .subtitle {
+            font-weight: 500;
+        }
+    }
+
+    .date-tag {
+        background-color: $forest-2;
+        color: $forest-4;
+    }
+
+    .tag-tag {
+        background-color: $forest-5;
+        color: $forest-4;
+    }
 }

@@ -89,4 +89,26 @@ $warm-5: #88304E;
         border: 1px solid $warm-3;
         color: $warm-4;
     }
+
+    .cards {
+        background-color: $warm-3;
+
+        .title, .subtitle, h1, h2, h3, h4, h5, h6 {
+            color: $warm-1 !important;
+        }
+
+        .subtitle {
+            font-weight: 500;
+        }
+    }
+
+    .date-tag {
+        background-color: $warm-2;
+        color: $warm-4;
+    }
+
+    .tag-tag {
+        background-color: $warm-5;
+        color: $warm-4;
+    }
 }

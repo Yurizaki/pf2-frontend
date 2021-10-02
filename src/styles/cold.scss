@@ -90,4 +90,26 @@ $cold-5: #1d3557;
         border: 1px solid $cold-3;
         color: $cold-4;
     }
+
+    .cards {
+        background-color: $cold-3;
+
+        .title, .subtitle, h1, h2, h3, h4, h5, h6 {
+            color: $cold-1 !important;
+        }
+
+        .subtitle {
+            font-weight: 500;
+        }
+    }
+
+    .date-tag {
+        background-color: $cold-2;
+        color: $cold-4;
+    }
+
+    .tag-tag {
+        background-color: $cold-5;
+        color: $cold-4;
+    }
 }

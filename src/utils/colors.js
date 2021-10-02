@@ -67,4 +67,11 @@ export function toggleScheme() {
 	else {
 		col.setIndex(0);
 	}
+
+    sessionStorage.setItem('scheme-index', col.getIndex());
+}
+
+let data = sessionStorage.getItem('scheme-index');
+if(data) {
+    col.setIndex(data);
 }

@@ -91,4 +91,26 @@ $french-5: #457b9d;
         border: 1px solid $french-3;
         color: $french-4;
     }
+
+    .cards {
+        background-color: $french-3;
+
+        .title, .subtitle, h1, h2, h3, h4, h5, h6 {
+            color: $french-1 !important;
+        }
+
+        .subtitle {
+            font-weight: 500;
+        }
+    }
+
+    .date-tag {
+        background-color: $french-2;
+        color: $french-4;
+    }
+
+    .tag-tag {
+        background-color: $french-5;
+        color: $french-4;
+    }
 }
