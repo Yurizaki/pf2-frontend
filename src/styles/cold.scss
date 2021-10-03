@@ -27,12 +27,6 @@ $cold-5: #1d3557;
         }
     }
 
-    .card-separator {
-        height: 10px;
-        width: 100%;
-        border-bottom: 1px solid $cold-2;
-    }
-
     .sidebar {
         background-color: $cold-2;
 
@@ -111,5 +105,9 @@ $cold-5: #1d3557;
     .tag-tag {
         background-color: $cold-5;
         color: $cold-4;
+    }
+
+    hr {
+        background-color: $cold-2;
     }
 }

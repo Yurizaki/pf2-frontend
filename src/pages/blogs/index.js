@@ -114,7 +114,7 @@ export default function BlogPage({ data }) {
 							</div>
 						</div>
 
-						<div className="card-separator mb-3"></div>
+						<hr />
 					</div>
 				))}
 

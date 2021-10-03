@@ -5,7 +5,6 @@ $french-3: #a8dadc;
 $french-4: #f1faee;
 $french-5: #457b9d;
 
-
 .french-bg-col {
     background-color: $french-1;
     color: $french-4;
@@ -26,12 +25,6 @@ $french-5: #457b9d;
             color: $french-4;
             background-color: $french-5;
         }
-    }
-
-    .card-separator {
-        height: 10px;
-        width: 100%;
-        border-bottom: 1px solid $french-2;
     }
 
     .sidebar {
@@ -112,5 +105,9 @@ $french-5: #457b9d;
     .tag-tag {
         background-color: $french-5;
         color: $french-4;
+    }
+
+    hr {
+        background-color: $french-2;
     }
 }

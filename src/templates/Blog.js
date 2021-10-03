@@ -87,7 +87,7 @@ const Blog = (props) => {
 					</div>
 				</div>
 
-				<div className="card-separator mb-3 mt-3"></div>
+				<hr />
 
 				<div className="columns">
 					<div className="column content">
@@ -110,7 +110,7 @@ const Blog = (props) => {
 					</div>
 				</div>
 
-				<div className="card-separator mb-3 mt-3"></div>
+				<hr />
 
 				<div className="columns">
 					<div className="column content">
@@ -134,7 +134,7 @@ const Blog = (props) => {
 					</div>
 				</div>
 
-				<div className="card-separator mb-3 mt-3"></div>
+				<hr />
 
 				<div className="columns">
 					<div className="column content">
@@ -144,7 +144,7 @@ const Blog = (props) => {
 				</div>
 
 
-				<div className="card-separator"></div>
+				<hr />
 
 				<div className="section p-0 pt-3 has-text-right">
 					<Link to="../">

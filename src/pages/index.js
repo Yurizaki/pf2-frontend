@@ -115,7 +115,7 @@ const IndexPage = (props) => {
 							</div>
 						</div>
 
-						<div className="card-separator mb-3"></div>
+						<hr />
 					</div>
 				))}
 
