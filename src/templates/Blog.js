@@ -36,6 +36,11 @@ export const query = graphql`
 					paragraph1 {
 						raw
 					}
+					media {
+						file {
+							url
+						}
+					}
 				}
 			}
 		}
@@ -73,85 +78,105 @@ const Blog = (props) => {
 
 	console.log(vocabulary);
 	const col = getBgCol();
+
+	let image;
+	if (props.data.allContentfulBlog.edges[0].node.media) {
+		image = props.data.allContentfulBlog.edges[0].node.media.file.url;
+	} else {
+		image = "https://bulma.io/images/placeholders/1280x960.png";
+	}
+	console.log(image);
+	const style = {
+		"background-image": "url(" + image + ")",
+		"background-repeat": "no-repeat",
+		"background-size": "contain",
+	};
 	return (
-		<div className={col}>
+		<div className={col} style={style}>
 			<Seo title={title} />
-			<PageCmp hasSidebar={true} pageTitle="Alex">
-				<ColorToggleCmp url={"/blogs/" + slug}></ColorToggleCmp>
-				<div className="columns">
-					<div className="column">
-						<p className="title is-size-1 pb-1 mb-1">{title}</p>
-						<span className="tag date-tag mr-2">Created: {createdAt}</span>
-						<span className="tag date-tag mr-2">Updated: {updatedAt}</span>
-						<span className="tag tag-tag">Tag: {tag}</span>
-					</div>
-				</div>
-
-				<hr />
-
-				<div className="columns">
-					<div className="column content">
-						<p className="is-size-4">
-							New Vocabulary used in this article
-						</p>
-
-						<div class="columns is-flex-mobile is-flex-wrap-wrap ">
-							{vocabulary.map((vocab) => (
-								<div class="column is-one-fifth-tablet is-two-fifths-mobile box m-2 cards">
-									<p class="title is-size-5 mb-5">
-										{vocab.chinese}
-									</p>
-									<p class="subtitle is-size-6">
-										{vocab.pinyin}
-									</p>
-								</div>
-							))}
+			<div className="gradient">
+				<PageCmp hasSidebar={true} pageTitle="Alex">
+					<ColorToggleCmp url={"/blogs/" + slug}></ColorToggleCmp>
+					<div className="columns">
+						<div className="column">
+							<p className="title is-size-1 pb-1 mb-1">{title}</p>
+							<span className="tag date-tag mr-2">
+								Published: {createdAt}
+							</span>
+							<span className="tag date-tag mr-2">
+								Updated: {updatedAt}
+							</span>
+							<span className="tag tag-tag">Tag: {tag}</span>
 						</div>
 					</div>
-				</div>
 
-				<hr />
+					<hr />
 
-				<div className="columns">
-					<div className="column content">
-						<p className="is-size-4">New Grammar rules</p>
-						<div class="columns">
-							<div className="column">
-								{grammar.map((grammar) => (
-									<div class="columns">
-										<div class="column is-11 box m-4 cards">
-											<p class="title is-size-5 mb-5">
-												{grammar.rule}
-											</p>
-											<p class="subtitle is-size-6 ">
-												{grammar.desc}
-											</p>
-										</div>
+					<div className="columns">
+						<div className="column content">
+							<p className="is-size-4">
+								New Vocabulary used in this article
+							</p>
+
+							<div class="columns is-flex-mobile is-flex-wrap-wrap ">
+								{vocabulary.map((vocab) => (
+									<div class="column is-one-fifth-tablet is-two-fifths-mobile box m-2 cards">
+										<p class="title is-size-5 mb-5">
+											{vocab.chinese}
+										</p>
+										<p class="subtitle is-size-6">
+											{vocab.pinyin}
+										</p>
 									</div>
 								))}
 							</div>
 						</div>
 					</div>
-				</div>
 
-				<hr />
+					<hr />
 
-				<div className="columns">
-					<div className="column content">
-						<p className="is-size-4">Grammar Explained</p>
-						{documentToReactComponents(JSON.parse(renderedHtml))}
+					<div className="columns">
+						<div className="column content">
+							<p className="is-size-4">New Grammar rules</p>
+							<div class="columns">
+								<div className="column">
+									{grammar.map((grammar) => (
+										<div class="columns">
+											<div class="column is-11 box m-4 cards">
+												<p class="title is-size-5 mb-5">
+													{grammar.rule}
+												</p>
+												<p class="subtitle is-size-6 ">
+													{grammar.desc}
+												</p>
+											</div>
+										</div>
+									))}
+								</div>
+							</div>
+						</div>
 					</div>
-				</div>
 
+					<hr />
 
-				<hr />
+					<div className="columns">
+						<div className="column content">
+							<p className="is-size-4">Grammar Explained</p>
+							{documentToReactComponents(
+								JSON.parse(renderedHtml)
+							)}
+						</div>
+					</div>
 
-				<div className="section p-0 pt-3 has-text-right">
-					<Link to="../">
-						<button className="button">Back to Blogs</button>
-					</Link>
-				</div>
-			</PageCmp>
+					<hr />
+
+					<div className="section p-0 pt-3 has-text-right">
+						<Link to="../">
+							<button className="button">Back to Blogs</button>
+						</Link>
+					</div>
+				</PageCmp>
+			</div>
 		</div>
 	);
 };
