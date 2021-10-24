@@ -76,7 +76,6 @@ const Blog = (props) => {
 		"-" +
 		createdAt.getFullYear();
 
-	console.log(vocabulary);
 	const col = getBgCol();
 
 	let image;
@@ -85,12 +84,14 @@ const Blog = (props) => {
 	} else {
 		image = "https://bulma.io/images/placeholders/1280x960.png";
 	}
-	console.log(image);
+
 	const style = {
 		"background-image": "url(" + image + ")",
 		"background-repeat": "no-repeat",
 		"background-size": "contain",
 	};
+
+
 	return (
 		<div className={col} style={style}>
 			<Seo title={title} />

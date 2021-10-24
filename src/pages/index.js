@@ -36,6 +36,7 @@ export const query = graphql`
 `;
 
 const IndexPage = (props) => {
+	console.log(props)
 	let topExcerpts = [];
 	if (props) {
 		if (props.data.allContentfulBlog) {
